@@ -9,6 +9,13 @@ module.exports = class extends Generator {
 
   method1() {
     console.log('method 1 just ran')
+    console.log('this.sourceRoot()', this.sourceRoot())
+    console.log('this.templatePath()', this.templatePath('index.js'))
+    this.fs.copyTpl(
+      this.templatePath('hello.txt'),
+      this.destinationPath('public/hello.txt'),
+      {title: 'John Doe'}
+    )
   }
 
   method2() {
